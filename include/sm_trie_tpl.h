@@ -244,7 +244,7 @@ public:
 					outgoing_limit = m_baseSize - outgoing_base;
 				}
 
-				for (unsigned int i=1; i<=outgoing_limit; i++,cur++)
+				for (unsigned int i=1; i<=outgoing_limit; i++,++cur)
 				{
 					if (cur->mode == Node_Unused || cur->parent != lastidx)
 					{
@@ -271,7 +271,7 @@ public:
 
 				assert(incoming_limit > 0 && incoming_limit <= 255);
 
-				for (unsigned int i=1; i<=incoming_limit; i++,cur++)
+				for (unsigned int i=1; i<=incoming_limit; i++,++cur)
 				{
 					if (cur->mode == Node_Arc || cur->mode == Node_Term)
 					{
@@ -324,7 +324,7 @@ public:
 							{
 								outgoing_limit = 255;
 							}
-							for (unsigned int j=1; j<=outgoing_limit; j++, check_base++)
+							for (unsigned int j=1; j<=outgoing_limit; j++, ++check_base)
 							{
 								if (check_base->parent == oldidx)
 								{
@@ -381,7 +381,7 @@ public:
 							{
 								outgoing_limit = 255;
 							}
-							for (unsigned int j=1; j<=outgoing_limit; j++, check_base++)
+							for (unsigned int j=1; j<=outgoing_limit; j++, ++check_base)
 							{
 								if (check_base->parent == oldidx)
 								{
@@ -473,7 +473,7 @@ public:
 							node->parent = lastidx;
 							node->mode = Node_Arc;	/* Just in case we run x_check again */
 							*term = '\0';	/* Unmark the string table here */
-							term++;
+							++term;
 							keyptr++;
 						}
 					}
@@ -546,7 +546,7 @@ public:
 						/* Finish the final node */
 						curidx = q + charval(*term);
 						node = &m_base[curidx];
-						term++;
+						++term;
 						/* Optimize - don't add to string table if there's nothing more to eat */
 						if (*term == '\0')
 						{
@@ -579,7 +579,7 @@ public:
 						/* Re-create the old terminated node */
 						curidx = q + charval(*term);
 						node = &m_base[curidx];
-						term++;
+						++term;
 						node->valset = oldvalset;
 						if (node->valset)
 						{

@@ -181,3 +181,9 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+msvc8/.vs/rage/v16/Browse.VC.db
+msvc8/.vs/rage/v16/Browse.VC.opendb
+.vs/ProjectSettings.json
+.vs/rage/v16/Browse.VC.db
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json

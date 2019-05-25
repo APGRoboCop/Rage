@@ -7,49 +7,49 @@
 
 void ModulesManager::LoadedLibrary(LibraryForModule* library)
 {
-	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); it++)
+	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); ++it)
 		(*(it))->LoadedLibrary(library);
 }
 
 void ModulesManager::LoadedFunction(FunctionForModule* function)
 {
-	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); it++)
+	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); ++it)
 		(*(it))->LoadedFunction(function);
 }
 
 void ModulesManager::LoadedVirtualFunction(VirtualFunctionForModule* virtual_function)
 {
-	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); it++)
+	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); ++it)
 		(*(it))->LoadedVirtualFunction(virtual_function);
 }
 
 void ModulesManager::AmxxAttach(PFN_REQ_FNPTR reqFnptrFunc)
 {
-	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); it++)
+	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); ++it)
 		(*(it))->AMXX_Attach(reqFnptrFunc);
 }
 
 void ModulesManager::AmxxDetach()
 {
-	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); it++)
+	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); ++it)
 		(*(it))->AMXX_Detach();
 }
 
 void ModulesManager::PluginsLoaded()
 {
-	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); it++)
+	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); ++it)
 		(*(it))->AMXX_PluginsLoaded();
 }
 
 void ModulesManager::PluginsUnloading()
 {
-	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); it++)
+	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); ++it)
 		(*(it))->AMXX_PluginsUnloading();
 }
 
 void ModulesManager::PluginsUnloaded()
 {
-	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); it++)
+	for(CVector<ModuleForRage*>::iterator it = this->vector.begin(); it != this->vector.end(); ++it)
 		(*(it))->AMXX_PluginsUnloaded();
 }
 

@@ -1,12 +1,12 @@
 #(C)2004-2005 AMX Mod X Development Team
 # Makefile written by David "BAILOPAN" Anderson
 
-HLSDK = ../../../hlsdk
-MM_ROOT = ../../metamod/metamod
+HLSDK = ../hlsdk-2.3-p4/multiplayer
+MM_ROOT = ../metamod-p-37/metamod
 
 ### EDIT BELOW FOR OTHER PROJECTS ###
 
-OPT_FLAGS = -O2 -funroll-loops -s -pipe -fomit-frame-pointer -fno-strict-aliasing
+OPT_FLAGS = -O2 -s -pipe -fomit-frame-pointer -fno-strict-aliasing -mtune=generic -msse2 -mfpmath=sse
 DEBUG_FLAGS = -g -ggdb3
 CPP = gcc
 NAME = rage
@@ -90,7 +90,7 @@ ifeq "$(AMD64)" "true"
 else
 	BINARY = $(NAME)_$(BIN_SUFFIX_32)
 	CFLAGS += -DPAWN_CELL_SIZE=32 -DJIT -DASM32
-	OPT_FLAGS += -march=i586
+	OPT_FLAGS += -march=i686
 endif
 
 OBJ_LINUX := $(OBJECTS:%.cpp=$(BIN_DIR)/%.o)

@@ -22,7 +22,7 @@ struct TrieNode
 			if((*it)->value == search_value)
 				return *it;
 
-			it++;
+			++it;
 		}
 
 		return NULL;
@@ -52,7 +52,7 @@ struct TrieNode
 				return true;
 			}
 
-			it++;
+			++it;
 		}
 
 		return false;
@@ -70,7 +70,7 @@ struct TrieNode
 			TrieNode* node = *it;
 			node->clear();
 			delete node;
-			it++;
+			++it;
 		}
 
 		vec.clear();
@@ -118,7 +118,7 @@ struct TrieNode
 
 			node->show(now,n+1);
 			
-			it++;
+			++it;
 		}
 	}
 
@@ -137,7 +137,7 @@ struct TrieNode
 			else
 				i += node->count();
 
-			it++;
+			++it;
 		}
 
 		return i;

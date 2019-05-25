@@ -62,7 +62,7 @@ bool Function::remove_plugin_hook(int hook_id,int phase)
 			return true;
 		}
 
-		it++;
+		++it;
 	}
 
 	return false;
@@ -82,7 +82,7 @@ bool Function::remove_module_hook(void* address,RageHookPhase rage_hook_phase)
 {
 	CVector<void*>::iterator it = this->hooks_modules[(unsigned int)rage_hook_phase].begin();
 
-	for(;it != this->hooks_modules[(unsigned int)rage_hook_phase].end();it++)
+	for(;it != this->hooks_modules[(unsigned int)rage_hook_phase].end();++it)
 	{
 		if(address == *it)
 		{

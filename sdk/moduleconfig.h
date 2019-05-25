@@ -7,9 +7,9 @@
 
 // Module info
 #define MODULE_NAME "Rage"
-#define MODULE_VERSION "BETA 3"
-#define MODULE_AUTHOR "joaquimandrade"
-#define MODULE_URL "http://www.amxmodx.org"
+#define MODULE_VERSION "BETA 4"
+#define MODULE_AUTHOR "RoboCop, Arkshine, joaquimandrade"
+#define MODULE_URL "https://apg-clan.org/"
 #define MODULE_LOGTAG "RAGE"
 #define MODULE_LIBRARY "rage"
 #define MODULE_LIBCLASS ""
